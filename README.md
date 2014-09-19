@@ -25,7 +25,7 @@ This will be acheived by following the process outlined below.
 #####Assumptions/Expectations
 It is assumed that the following critera will be met:
 
-* All necessary cran packages will be installed prior to running the process if desired.
+* All necessary cran packages will be installed prior to running the process.
 * The data set will be downloaded and unzipped into the working directory that will be used for evaluation of the project.
 * Unzipped folder/'s will not be renamed; as this will cause the run_analysis.R to fail.
 * The run_analysis.R will be "source()"-ed from within the same working directory that contains the unzipped data folder.
