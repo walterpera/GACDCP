@@ -100,7 +100,7 @@ colnames(xtstdt) <- featdt$V2
 tstdt <- tbl_df(cbind(Activity_Name=ytstdt[,2], tstsubdt, xtstdt))
 trndt <- tbl_df(cbind(Activity_Name=ytrndt[,2], trnsubdt, xtrndt))
 
-## Bind final datasets, use dplyr group_by, dplyr summarise and write to table in two steps.
+## Bind final datasets, use dplyr group_by, dplyr summarise and write to table.
 tdydt <- rbind(
      trndt[,names(select(tstdt, Activity_Name, Subject_ID, contains("_mean"), contains("_std"), -contains("Freq")))]
      ,tstdt[,names(select(tstdt, Activity_Name, Subject_ID, contains("_mean"), contains("_std"), -contains("Freq")))]
@@ -111,7 +111,4 @@ tdydt_2 <- tdydt %>%
      group_by(Activity_Name, Subject_ID) %>%
      summarise_each(funs(mean))
 
-write.table(tdydt_2, file=tidyloc, row.name=FALSE)			   
-
-## How to read the tidydata.txt into R
-tdydf <- data.frame(read.table(tidyloc, header = TRUE))
+write.table(tdydt_2, file=tidyloc, row.name=FALSE)
