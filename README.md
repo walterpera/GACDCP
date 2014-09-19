@@ -25,11 +25,10 @@ This will be acheived by following the process outlined below.
 #####Assumptions/Expectations
 It is assumed that the following critera will be met:
 
-* Evaluater will review all necessary files.
-* Evaluater will have necessary cran packages installed to run the process if desired.
-* Evaluator will download the data set and place the unzipped folder/'s into the working directory that will be used for evaluation of the project.
-* Evaluator will not rename any of the folders as this will cause the run_analysis.R to fail.
-* Evaluator will "source()" the run_analysis.R from within the same working directory that contains the unzipped data folder.
+* All necessary cran packages will be installed prior to running the process if desired.
+* The data set will be downloaded and unzipped into the working directory that will be used for evaluation of the project.
+* Unzipped folder/'s will not be renamed; as this will cause the run_analysis.R to fail.
+* The run_analysis.R will be "source()"-ed from within the same working directory that contains the unzipped data folder.
 
 #####Included Files
 The following files can be found within the github repository.
