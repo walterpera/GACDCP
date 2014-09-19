@@ -45,11 +45,13 @@ The following cran packages will be required beyond the basic install of R.
 
 #####Process
 
-Starting with obtaining the data which can be downloaded from the following location: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. Unzip the data into the R's working directory along with the run_analysis.R file. 
+Starting with obtaining the data which can be downloaded from the following location: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. Unzip the data into the R's working directory.
+
+Download and place the run_analysis.R file into R's working directory.
 
 Within R source the run_analysis.R script file.  This will start the script that will do the following: 
 
-Note: it needs to be understood that while all the steps were acheived there were not followed in the same order outlined.  This was done to reduce the level of effort needed to achieve the outcome.
+Note: it needs to be understood that while all the steps were acheived they were not followed in the same order outlined.  This was done to reduce the level of effort needed to achieve the outcome.
 
 1. Merge the Training and Test data sets.
      a. Merge the activity labels to the y_test/y_train data.
