@@ -11,7 +11,7 @@ This readme file provides the necessary information for obtaining the necessary 
 The goal of this project is to take the data sourced at the [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/ml/index.html) and meet the following requirements:
 
 1. Merge the Training and Test data sets.
-2. Subset the data to only measurements with a Mean() or Standard Deviation() applied to them.
+2. Subset the measurement varibles to only measurements with a Mean() or Standard Deviation() applied to them.
 3. Use the activity labels file to name the activities in the data set.
 4. Appropriately label the data set variables with descriptive names.
 5. Create a tidy data output with the average for each of the subset variables.
@@ -37,7 +37,7 @@ The following files can be found within the github repository.
 2. Codebook.md
 3. run_analysis.R
 
-#####Process
+#####R Packages
 The following cran packages will be required beyond the basic install of R.
 
 1. data.table version 1.9.2
@@ -45,13 +45,15 @@ The following cran packages will be required beyond the basic install of R.
 
 #####Process
 
-Starting with obtaining the data which can be downloaded from the following location: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. Unzip the data into the R's working directory.
+Starting with obtaining the data which can be downloaded from the following location: 
 
-Download and place the run_analysis.R file into R's working directory.
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
+
+Unzip the data into the R's working directory along with the run_analysis.R file. 
 
 Within R source the run_analysis.R script file.  This will start the script that will do the following: 
 
-Note: it needs to be understood that while all the steps were acheived they were not followed in the same order outlined.  This was done to reduce the level of effort needed to achieve the outcome.
+Note: it needs to be understood that while all the steps were acheived there were not followed in the same order outlined.  This was done to reduce the level of effort needed to achieve the outcome.
 
 1. Merge the Training and Test data sets.
      a. Merge the activity labels to the y_test/y_train data.
