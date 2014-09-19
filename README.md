@@ -11,7 +11,7 @@ This readme file provides the necessary information for obtaining the necessary 
 The goal of this project is to take the data sourced at the [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/ml/index.html) and meet the following requirements:
 
 1. Merge the Training and Test data sets.
-2. Subset the measurement varibles to only measurements with a Mean() or Standard Deviation() applied to them.
+2. Subset the measurement variables to only measurements with a Mean() or Standard Deviation() applied to them.
 3. Use the activity labels file to name the activities in the data set.
 4. Appropriately label the data set variables with descriptive names.
 5. Create a tidy data output with the average for each of the subset variables.
@@ -57,11 +57,11 @@ Note: it needs to be understood that while all the steps were acheived there wer
 
 1. Merge the Training and Test data sets.
      a. Merge the activity labels to the y_test/y_train data.
-     b. Create a function to update the variable names from the features.txt to a cleaner look.
-          - Remove duplicate words.
-          - Remove "()".
-          - Replace "-" with "_".
-          - Descriptor for the XYZ axis.
+     b. Create a function to update the variable names from the features.txt to a cleaner look by:
+          - Removing duplicate words.
+          - Removing "()".
+          - Replacing "-" with "_".
+          - Adding a descriptor for the XYZ axis.
 
 
 2. Use the activity labels file to name the activities in the data set.
@@ -92,5 +92,5 @@ tdydf <- data.frame(read.table("./tidydata.txt", header = TRUE))
 ```
 
 
+
  
-                                      
