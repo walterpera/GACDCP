@@ -49,11 +49,11 @@ Starting with obtaining the data which can be downloaded from the following loca
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
 
-Unzip the data into the R's working directory along with the run_analysis.R file. 
+Unzip the data into R's working directory along with the run_analysis.R file. 
 
 Within R source the run_analysis.R script file.  This will start the script that will do the following: 
 
-Note: it needs to be understood that while all the steps were acheived there were not followed in the same order outlined.  This was done to reduce the level of effort needed to achieve the outcome.
+Note: it needs to be understood that while all the steps were acheived they were not followed in the same order outlined.  This was done to reduce the level of effort needed to achieve the outcome.
 
 1. Merge the Training and Test data sets.
      a. Merge the activity labels to the y_test/y_train data.
@@ -64,18 +64,18 @@ Note: it needs to be understood that while all the steps were acheived there wer
           - Adding a descriptor for the XYZ axis.
 
 
-2. Use the activity labels file to name the activities in the data set.
-     a. Add variable names to the subject and activity data.
-
-
-3. Appropriately label the data set variables with descriptive names.
+2. Appropriately label the data set variables with descriptive names.
      a. Add variable names to the x_test/x_train data using the features data.
+
+
+3. Use the activity labels file to name the activities in the data set.
+     a. Add variable names to the subject and activity data.
 
 
 4. Subset the data to only measurements with a Mean() or Standard Deviation() applied to them.
      a. Upon review of the features_info.txt and the section "The set of variables..." it was determined that only the variable names with mean() or std() in them met the requirements to be subsetted. For example if we look at other variables containing the word mean:
           - meanFreq(): A weighted average of the frequency components. So not a true mean.
-          - angle(): The angle between to vectors. While this uses a mean variable it is not a true mean either.
+          - angle(): The angle between two vectors. While this uses a mean variable it's output is now a mean variable that has been modified and therefore it is not a true mean either.
      b. Subset the data based on variable names with "_mean" or "_std" and not "Freq"
 
 
@@ -85,12 +85,12 @@ Note: it needs to be understood that while all the steps were acheived there wer
 
 #####Reading output file
 
-Should the output file need to be read into R the following R code will read it in. It is assumed that the the tidy file has been placed into the working directory of R.
+Should the output file need to be read into R, the following R code will read it in. It is assumed that the the tidydata file has been placed into the working directory of R.
 
 ```{r}
 tdydf <- data.frame(read.table("./tidydata.txt", header = TRUE))
 ```
 
 
-
  
+                                      
