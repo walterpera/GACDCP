@@ -31,10 +31,6 @@ tstsubdt <- tbl_df(read.table(tstsubloc, header=FALSE, stringsAsFactors=FALSE))
 xtstdt <- tbl_df(read.table(xtstloc, header=FALSE))
 ytstdt <- tbl_df(read.table(ytstloc, header=FALSE))
 
-## Merge Activity descriptions to codes.
-ytrndt <- merge(ytrndt, actdt, by.x="V1" ,by.y="V1")
-ytstdt <- merge(ytstdt, actdt, by.x="V1", by.y="V1")
-
 ## Create function() nameReplace.
 nameReplace <- function(name = NULL){
      
@@ -91,14 +87,19 @@ nameReplace <- function(name = NULL){
 featdt <- mutate(featdt, V2=sapply(V2, nameReplace))
 
 ## Update the column names.
+colnames(actdt) <- c("V1", "Activity_Name")
 colnames(trnsubdt) <- "Subject_ID"
 colnames(tstsubdt) <- "Subject_ID"
 colnames(xtrndt) <- featdt$V2
 colnames(xtstdt) <- featdt$V2
 
 ## Bind y/sub/x tables.
-tstdt <- tbl_df(cbind(Activity_Name=ytstdt[,2], tstsubdt, xtstdt))
-trndt <- tbl_df(cbind(Activity_Name=ytrndt[,2], trnsubdt, xtrndt))
+trndt <- tbl_df(cbind(ytrndt, trnsubdt, xtrndt))
+tstdt <- tbl_df(cbind(ytstdt, tstsubdt, xtstdt))
+
+## Merge Activity descriptions to codes.
+trndt <- merge(trndt, actdt, by.x="V1" ,by.y="V1", sort=FALSE)
+tstdt <- merge(tstdt, actdt, by.x="V1", by.y="V1", sort=FALSE)
 
 ## Bind final datasets, use dplyr group_by, dplyr summarise and write to table.
 tdydt <- rbind(
